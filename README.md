@@ -1,3 +1,17 @@
+# Inuit.lesscss
+
+This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/),
+it is up-to-date as of, October 27, 2012.
+
+To view changes to the original that are waiting to be incorporated, visit
+the [compare page](https://github.com/csswizardry/inuit.css/compare/bf96e56075040e9d7557e992bb9bef473c017f80...master).
+If you're getting impatient, feel free to submit a pull request.
+
+This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
+I like inuit.css and my team and I use LESS.
+
+---
+
 # ![inuit.css](http://csswizardry.com/inuitcss/img/logo.jpg)
 
 inuit.css is a powerful little framework designed for _serious_ developers.
