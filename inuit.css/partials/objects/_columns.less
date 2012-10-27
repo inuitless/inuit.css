@@ -14,9 +14,9 @@
 .text-cols--3,
 .text-cols--4,
 .text-cols--5{
-    .vendor(column-gap, @base-spacing-unit*1px);
+    .column-gap(@base-spacing-unit*1px);
 }
-.text-cols--2    { .vendor(column-count, 2); }
-.text-cols--3    { .vendor(column-count, 3); }
-.text-cols--4    { .vendor(column-count, 4); }
-.text-cols--5    { .vendor(column-count, 5); }
+.text-cols--2    { .column-count(2); }
+.text-cols--3    { .column-count(3); }
+.text-cols--4    { .column-count(4); }
+.text-cols--5    { .column-count(5); }

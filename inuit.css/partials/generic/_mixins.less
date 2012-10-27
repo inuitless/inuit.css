@@ -23,12 +23,33 @@
    `@include vendor(box-sizing, border-box);`
  * 
  */
-.vendor(@property, @value){
-    -webkit-{@property}:@value;
-       -moz-{@property}:@value;
-        -ms-{@property}:@value;
-         -o-{@property}:@value;
-            {@property}:@value;
+.box-sizing(@value){
+    -webkit-box-sizing:@value;
+       -moz-box-sizing:@value;
+        -ms-box-sizing:@value;
+         -o-box-sizing:@value;
+            box-sizing:@value;
+}
+.column-gap(@value){
+    -webkit-column-gap:@value;
+       -moz-column-gap:@value;
+        -ms-column-gap:@value;
+         -o-column-gap:@value;
+            column-gap:@value;
+}
+.column-count(@value){
+    -webkit-column-count:@value;
+       -moz-column-count:@value;
+        -ms-column-count:@value;
+         -o-column-count:@value;
+            column-count:@value;
+}
+.border-radius(@value){
+    -webkit-border-radius:@value;
+       -moz-border-radius:@value;
+        -ms-border-radius:@value;
+         -o-border-radius:@value;
+            border-radius:@value;
 }
 
 
