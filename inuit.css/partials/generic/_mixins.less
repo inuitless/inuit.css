@@ -10,7 +10,7 @@
  * Thanks to @redclov3r for the `line-height` Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
-@mixin font-size(@font-size){
+.font-size(@font-size){
     font-size:@font-size +px;
     font-size:@font-size / @base-font-size +rem;
     line-height:ceil(@font-size / @base-line-height) * (@base-line-height / @font-size);
@@ -23,7 +23,7 @@
    `@include vendor(box-sizing, border-box);`
  * 
  */
-@mixin vendor(@property, @value){
+.vendor(@property, @value){
     -webkit-#{@property}:@value;
        -moz-#{@property}:@value;
         -ms-#{@property}:@value;
@@ -47,7 +47,7 @@
  * 
  * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
  */
-@mixin keyframe (@animation-name){
+.keyframe (@animation-name){
     @-webkit-keyframes @animation-name{
         @content;
     }
@@ -77,7 +77,7 @@
  * 
  * Where `@truncation-boundary` is a united measurement.
  */
-@mixin truncate(@truncation-boundary){
+.truncate(@truncation-boundary){
     max-width:@truncation-boundary;
     white-space:nowrap;
     overflow:hidden;
