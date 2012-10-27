@@ -10,10 +10,10 @@
  * Thanks to @redclov3r for the `line-height` Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
-@mixin font-size($font-size){
-    font-size:$font-size +px;
-    font-size:$font-size / $base-font-size +rem;
-    line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+@mixin font-size(@font-size){
+    font-size:@font-size +px;
+    font-size:@font-size / @base-font-size +rem;
+    line-height:ceil(@font-size / @base-line-height) * (@base-line-height / @font-size);
 }
 
 
@@ -23,12 +23,12 @@
    `@include vendor(box-sizing, border-box);`
  * 
  */
-@mixin vendor($property, $value){
-    -webkit-#{$property}:$value;
-       -moz-#{$property}:$value;
-        -ms-#{$property}:$value;
-         -o-#{$property}:$value;
-            #{$property}:$value;
+@mixin vendor(@property, @value){
+    -webkit-#{@property}:@value;
+       -moz-#{@property}:@value;
+        -ms-#{@property}:@value;
+         -o-#{@property}:@value;
+            #{@property}:@value;
 }
 
 
@@ -47,24 +47,24 @@
  * 
  * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
  */
-@mixin keyframe ($animation-name){
-    @-webkit-keyframes $animation-name{
+@mixin keyframe (@animation-name){
+    @-webkit-keyframes @animation-name{
         @content;
     }
     
-    @-moz-keyframes $animation-name{
+    @-moz-keyframes @animation-name{
         @content;
     }
     
-    @-ms-keyframes $animation-name{
+    @-ms-keyframes @animation-name{
         @content;
     }
     
-    @-o-keyframes $animation-name{
+    @-o-keyframes @animation-name{
         @content;
     }
     
-    @keyframes $animation-name{
+    @keyframes @animation-name{
         @content;
     }
 }
@@ -75,10 +75,10 @@
  * 
    `@include truncate(100%);`
  * 
- * Where `$truncation-boundary` is a united measurement.
+ * Where `@truncation-boundary` is a united measurement.
  */
-@mixin truncate($truncation-boundary){
-    max-width:$truncation-boundary;
+@mixin truncate(@truncation-boundary){
+    max-width:@truncation-boundary;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;

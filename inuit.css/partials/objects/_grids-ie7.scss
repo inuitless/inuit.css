@@ -33,8 +33,8 @@
 }
     .ie7-grid .gw,
     .ie7-grid .grid-wrapper{
-        margin-right:-$half-spacing-unit +px;
-        margin-left: -$half-spacing-unit +px;
+        margin-right:-@half-spacing-unit +px;
+        margin-left: -@half-spacing-unit +px;
     }
         .ie7-grid .g,
         .ie7-grid .grid{
@@ -42,6 +42,6 @@
         }
             .ie7-grid .g__inner,
             .ie7-grid .grid__inner{
-                padding-right:$half-spacing-unit +px;
-                padding-left: $half-spacing-unit +px;
+                padding-right:@half-spacing-unit +px;
+                padding-left: @half-spacing-unit +px;
             }

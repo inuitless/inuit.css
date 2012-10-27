@@ -14,7 +14,7 @@
 .text-cols--3,
 .text-cols--4,
 .text-cols--5{
-    @include vendor(column-gap, $base-spacing-unit +px);
+    @include vendor(column-gap, @base-spacing-unit +px);
 }
 .text-cols--2    { @include vendor(column-count, 2); }
 .text-cols--3    { @include vendor(column-count, 3); }
