@@ -1,10 +1,10 @@
 # Inuit.lesscss
 
 This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/),
-it is up-to-date as of November 4, 2012.
+it is up-to-date as of November 18, 2012.
 
 To view changes to the original that are waiting to be incorporated, visit
-the [compare page](https://github.com/csswizardry/inuit.css/compare/2ca0d3440f423a0efeeb4ac58b66f5cd9fd8b5c6...master).
+the [compare page](https://github.com/csswizardry/inuit.css/compare/608c9d6353a360ff1ab57d4d2539f24319f6bea8...master).
 If you're getting impatient, feel free to submit a pull request.
 
 This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
