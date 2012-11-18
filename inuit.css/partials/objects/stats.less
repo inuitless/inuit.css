@@ -34,12 +34,12 @@
         display:-webkit-box;
         display:   -moz-box;
         display:        box;
-        @include vendor(box-orient, vertical);
+        .box-orient(vertical);
     }
         .stat__title{
-            @include vendor(box-ordinal-group, 2);
+            .box-ordinal-group(2);
         }
         .stat__value{
             margin-left:0;
-            @include vendor(box-ordinal-group, 1);
+            .box-ordinal-group(1);
         }
