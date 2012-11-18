@@ -2,16 +2,19 @@
     $LOZENGES
 \*------------------------------------*/
 /**
- * Create pill-like runs of text, e.g.:
+ * Create pill- and lozenge-like runs of text, e.g.:
  * 
-   <p>This <span class=loz>here</span> is a lozenge!</p>
+   <p>This <span class=pill>here</span> is a pill!</p>
  * 
-   <h1>This <span class=loz>here</span> is also a lozenge!</h1>
+   <p>This <span class=loz>here</span> is also a lozenge!</p>
+ * 
+ * Pills have fully rounded ends, lozenges have only their corners rounded.
  * 
  * Demo: jsfiddle.net/inuitcss/N3pGm
  * 
  */
-.loz{
+.loz,
+.pill{
     display:inline-block;
     /**
      * These numbers set in ems mean that, at its narrowest, a lozenge will be
@@ -32,4 +35,9 @@
      * non-square elements whereas we just want to round the ends of an element.
      */
     .border-radius(100px);
+}
+
+
+.loz {
+	.border-radius(@brand-round*1px);
 }
