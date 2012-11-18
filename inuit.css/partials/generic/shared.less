@@ -44,6 +44,16 @@ hr,
 
 
 /**
+ * `hr` elements only take up a few pixels, so we need to give them special
+ * treatment regarding vertical rhythm.
+ */
+hr{
+    margin-bottom:(@base-spacing-unit)-2px;
+    margin-bottom:(((@base-spacing-unit)-2)/@base-font-size)*1rem;
+}
+
+
+/**
  * Where `margin-left` is concerned we want to try and indent certain elements
  * by a consistent amount. Define that amount once, here.
  */
