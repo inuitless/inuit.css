@@ -2,7 +2,7 @@
 
 This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/).
 
-The LESS version ,it is up-to-date as of November 25, 2012. To view changes to 
+The LESS version is up-to-date as of November 25, 2012. To view changes to 
 the original that are waiting to be incorporated, visit the 
 [compare page](https://github.com/csswizardry/inuit.css/compare/d3bb874a86475762a01907999060e5197b99749d...master).
 If you're getting impatient, feel free to submit a pull request.
