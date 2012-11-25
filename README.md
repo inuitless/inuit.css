@@ -3,9 +3,7 @@
 This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/),
 it is up-to-date as of November 18, 2012.
 
-To view changes to the original that are waiting to be incorporated, visit
-the [compare page](https://github.com/csswizardry/inuit.css/compare/608c9d6353a360ff1ab57d4d2539f24319f6bea8...master).
-If you're getting impatient, feel free to submit a pull request.
+You are currently viewing [v4.1.5-LESS](https://github.com/peterwilsoncc/inuit.css/archive/v4.1.5-LESS.zip). The last version to support Internet Explorer 7.
 
 This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
 I like inuit.css and my team and I use LESS.
