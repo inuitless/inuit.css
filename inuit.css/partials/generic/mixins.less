@@ -20,7 +20,7 @@
 /**
  * Create vendor-prefixed CSS in one go, e.g.
  * 
-   `@include vendor(box-sizing, border-box);`
+   `.box-sizing(border-box);`
  * 
  */
 .box-sizing(@value){
@@ -111,4 +111,27 @@
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
+}
+
+
+/**
+ * Create global or selective box sizing rules based on the value passed
+ * 
+ */
+.do-global-border-box(@conditional) when (@conditional = true) {
+    /**
+    * Let’s make the box model all nice, shall we…?
+    */
+    *,
+    *:before,
+    *:after{
+       .box-sizing(border-box);
+    }	
+}
+.do-global-border-box(@conditional) when (@conditional = false) {
+}
+.do-selective-border-box(@conditional) when (@conditional = false) {
+   .box-sizing(border-box);
+}
+.do-selective-border-box(@conditional) when (@conditional = true) {
 }
