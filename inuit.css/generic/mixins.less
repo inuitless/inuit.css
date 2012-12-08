@@ -115,6 +115,184 @@
 
 
 /**
+ * CSS arrows!!! But... before you read on, you might want to grab a coffee...
+ * 
+ * This mixin creates a CSS arrow on a given element. We can have the arrow
+ * appear in one of 12 locations, thus:
+ * 
+ *       01    02    03
+ *    +------------------+
+ * 12 |                  | 04
+ *    |                  |
+ * 11 |                  | 05
+ *    |                  |
+ * 10 |                  | 06
+ *    +------------------+
+ *       09    08    07
+ * 
+ * You pass this position in along with a desired arrow color and optional
+ * border color, for example:
+ * 
+ * `.arrow(top, left, red)`
+ * 
+ * for just a single, red arrow, or:
+ * 
+ * `.arrow(bottom, center, red, black)`
+ * 
+ * which will create a red triangle with a black border which sits at the bottom
+ * center of the element. Call the mixin thus: 
+ * 
+   .foo{
+       background-color:#BADA55;
+       border:1px solid #ACE;
+       .arrow(top, left, #BADA55, #ACE);
+   }
+ * 
+ */
+
+
+@arrow-size:            @base-spacing-unit;
+@arrow-border:          1;
+@border:                @arrow-size;
+@arrow:                 @arrow-size - @arrow-border;
+
+
+.arrow(@arrow-edge, @arrow-location, @arrow-color, @border-color: 'null') {
+    position:relative;
+
+    &:before,
+    &:after{
+        /* LESS does not provide access to the outer scope */
+        @ac: @arrow-color;
+        @bc: @border-color;
+        @border-color-local: ~`(this.bc.toJS() == "'null'")?this.ac.toJS():this.bc.toJS()`;
+
+        content:"";
+        position:absolute;
+        border-collapse:separate;
+        border: @border*1px solid transparent;
+        .color(@arrow-edge,@border-color-local);
+        .position(@arrow-edge,@arrow-location);
+    }
+    &:after{
+        border-width:@arrow*1px;
+        .color(@arrow-edge,@arrow-color);
+        .position-after(@arrow-edge,@arrow-location);
+    }
+
+
+    .position(@arrow-edge,@arrow-location) when (@arrow-edge = right) {
+        left: 100%; 
+        .location(@arrow-location);
+        .location(@arrow-location) when (@arrow-location = top) {
+            top: @arrow*1px;
+        }
+        .location(@arrow-location) when (@arrow-location = center) {
+            top: 50%;
+            .neg-margin-top(@border);
+        }
+        .location(@arrow-location) when (@arrow-location = bottom) {
+            bottom: @arrow*1px;
+        }
+    }
+    .position-after(@arrow-edge,@arrow-location) when (@arrow-edge = right),(@arrow-edge = left) {
+        .location(@arrow-location);
+        .location(@arrow-location) when (@arrow-location = top) {
+            top: @border*1px;
+        }
+        .location(@arrow-location) when (@arrow-location = center) {
+            top: 50%;
+            .neg-margin-top(@arrow);
+        }
+        .location(@arrow-location) when (@arrow-location = bottom) {
+            bottom: @border*1px;
+        }
+    }
+    .color(@arrow-edge,@color) when (@arrow-edge = right) {
+        border-left-color: @color;
+    }
+
+    .position(@arrow-edge,@arrow-location) when (@arrow-edge = left) {
+        right: 100%; 
+        .location(@arrow-location);
+        .location(@arrow-location) when (@arrow-location = top) {
+            top: @arrow*1px;
+        }
+        .location(@arrow-location) when (@arrow-location = center) {
+            top: 50%;
+            .neg-margin-top(@border);
+        }
+        .location(@arrow-location) when (@arrow-location = bottom) {
+            bottom: @arrow*1px;
+        }
+    }
+    .color(@arrow-edge,@color) when (@arrow-edge = left) {
+        border-right-color: @color;
+    }
+
+    .position(@arrow-edge,@arrow-location) when (@arrow-edge = top) {
+        bottom: 100%; 
+        .location(@arrow-location);
+        .location(@arrow-location) when (@arrow-location = left) {
+            left: @arrow*1px;
+        }
+        .location(@arrow-location) when (@arrow-location = center) {
+            left: 50%;
+            .neg-margin-left(@border);
+        }
+        .location(@arrow-location) when (@arrow-location = right) {
+            right: @arrow*1px;
+        }
+    }
+    .position-after(@arrow-edge,@arrow-location) when (@arrow-edge = top),(@arrow-edge = bottom) {
+        .location(@arrow-location);
+        .location(@arrow-location) when (@arrow-location = left) {
+            left: @border*1px;
+        }
+        .location(@arrow-location) when (@arrow-location = center) {
+            left: 50%;
+            .neg-margin-left(@arrow);
+        }
+        .location(@arrow-location) when (@arrow-location = right) {
+            right: @border*1px;
+        }
+    }
+    .color(@arrow-edge,@color) when (@arrow-edge = top) {
+        border-bottom-color: @color;
+    }
+
+    .position(@arrow-edge,@arrow-location) when (@arrow-edge = bottom) {
+        top: 100%; 
+        .location(@arrow-location);
+        .location(@arrow-location) when (@arrow-location = left) {
+            left: @arrow*1px;
+        }
+        .location(@arrow-location) when (@arrow-location = center) {
+            left: 50%;
+            .neg-margin-left(@border);
+        }
+        .location(@arrow-location) when (@arrow-location = right) {
+            right: @arrow*1px;
+        }
+    }
+    .color(@arrow-edge,@color) when (@arrow-edge = bottom) {
+        border-top-color: @color;
+    }
+
+
+    .neg-margin-top(@width) {
+        margin-top: @width*-1px;
+    }
+    .neg-margin-left(@width) {
+        margin-left: @width*-1px;
+    }
+}
+
+
+
+
+
+/**
  * Create global or selective box sizing rules based on the value passed
  * 
  */
@@ -126,7 +304,7 @@
     *:before,
     *:after{
        .box-sizing(border-box);
-    }	
+    }    
 }
 .do-global-border-box(@conditional) when (@conditional = false) {
 }
