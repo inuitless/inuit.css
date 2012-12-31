@@ -83,3 +83,37 @@
  */
 .accessibility              { position:absolute; left:-99999px; }
 [dir=rtl] .accessibility    { left:auto; right:-99999px; }
+
+
+/**
+ * Hide content based on breakpoint
+ */
+.hide {
+  position: absolute;
+  left: -9999px;
+}
+
+@media only screen and (max-width:~"@{palm-end}px") {
+  .hide--palm {
+    position: absolute;
+    left: -9999px;
+  }
+}
+@media only screen and (min-width:~"@{lap-start}px") and (max-width:~"@{lap-end}px") {
+  .hide--lap {
+    position: absolute;
+    left: -9999px;
+  }
+}
+@media only screen and (max-width:~"@{lap-end}px") {
+  .hide--portable {
+    position: absolute;
+    left: -9999px;
+  }
+}
+@media only screen and (min-width:~"@{desk-start}px") {
+  .hide--desk {
+    position: absolute;
+    left: -9999px;
+  }
+}
