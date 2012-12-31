@@ -20,7 +20,6 @@ can not be ported exactly. Some differences are:
   in vars.less for use with the responsive grid.
 * arrows mixin produces the same effect but the output code is 
   slightly different
-* debug mode is unavailable. This may be re-added down the track
 
 ## License
 
