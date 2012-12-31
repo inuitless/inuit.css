@@ -7,129 +7,136 @@
  * and faux flexbox.
  */
 
-/**
- * Whole
- */
-.one-whole {
-  width: 100%;
-}
 
-/**
- * Halves
- */
-.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
-  width: 50%;
-}
+.grid-setup(@prefix: 'null') {
+	// no access to outer scope
+	@p: @prefix;
+	@the-prefix: ~`(this.p.toJS() == "'null'")?'':this.p.toJS()`;
+	
+	/**
+	 * Whole
+	 */
+	.@{the-prefix}one-whole {
+	  width: 100%;
+	}
 
-/**
- * Thirds
- */
-.one-third, .two-sixths, .four-twelfths {
-  width: 33.333%;
-}
+	/**
+	 * Halves
+	 */
+	.@{the-prefix}one-half, .@{the-prefix}two-quarters, .@{the-prefix}three-sixths, .@{the-prefix}four-eighths, .@{the-prefix}five-tenths, .@{the-prefix}six-twelfths {
+	  width: 50%;
+	}
 
-.two-thirds, .four-sixths, .eight-twelfths {
-  width: 66.666%;
-}
+	/**
+	 * Thirds
+	 */
+	.@{the-prefix}one-third, .@{the-prefix}two-sixths, .@{the-prefix}four-twelfths {
+	  width: 33.333%;
+	}
 
-/**
- * Quarters
- */
-.one-quarter, .two-eighths, .three-twelfths {
-  width: 25%;
-}
+	.@{the-prefix}two-thirds, .@{the-prefix}four-sixths, .@{the-prefix}eight-twelfths {
+	  width: 66.666%;
+	}
 
-.three-quarters, .six-eighths, .nine-twelfths {
-  width: 75%;
-}
+	/**
+	 * Quarters
+	 */
+	.@{the-prefix}one-quarter, .@{the-prefix}two-eighths, .@{the-prefix}three-twelfths {
+	  width: 25%;
+	}
 
-/**
- * Fifths
- */
-.one-fifth, .two-tenths {
-  width: 20%;
-}
+	.@{the-prefix}three-quarters, .@{the-prefix}six-eighths, .@{the-prefix}nine-twelfths {
+	  width: 75%;
+	}
 
-.two-fifths, .four-tenths {
-  width: 40%;
-}
+	/**
+	 * Fifths
+	 */
+	.@{the-prefix}one-fifth, .@{the-prefix}two-tenths {
+	  width: 20%;
+	}
 
-.three-fifths, .six-tenths {
-  width: 60%;
-}
+	.@{the-prefix}two-fifths, .@{the-prefix}four-tenths {
+	  width: 40%;
+	}
 
-.four-fifths, .eight-tenths {
-  width: 80%;
-}
+	.@{the-prefix}three-fifths, .@{the-prefix}six-tenths {
+	  width: 60%;
+	}
 
-/**
- * Sixths
- */
-.one-sixth, .two-twelfths {
-  width: 16.666%;
-}
+	.@{the-prefix}four-fifths, .@{the-prefix}eight-tenths {
+	  width: 80%;
+	}
 
-.five-sixths, .ten-twelfths {
-  width: 83.333%;
-}
+	/**
+	 * Sixths
+	 */
+	.@{the-prefix}one-sixth, .@{the-prefix}two-twelfths {
+	  width: 16.666%;
+	}
 
-/**
- * Eighths
- */
-.one-eighth {
-  width: 12.5%;
-}
+	.@{the-prefix}five-sixths, .@{the-prefix}ten-twelfths {
+	  width: 83.333%;
+	}
 
-.three-eighths {
-  width: 37.5%;
-}
+	/**
+	 * Eighths
+	 */
+	.@{the-prefix}one-eighth {
+	  width: 12.5%;
+	}
 
-.five-eighths {
-  width: 62.5%;
-}
+	.@{the-prefix}three-eighths {
+	  width: 37.5%;
+	}
 
-.seven-eighths {
-  width: 87.5%;
-}
+	.@{the-prefix}five-eighths {
+	  width: 62.5%;
+	}
 
-/**
- * Tenths
- */
-.one-tenth {
-  width: 10%;
-}
+	.@{the-prefix}seven-eighths {
+	  width: 87.5%;
+	}
 
-.three-tenths {
-  width: 30%;
-}
+	/**
+	 * Tenths
+	 */
+	.@{the-prefix}one-tenth {
+	  width: 10%;
+	}
 
-.seven-tenths {
-  width: 70%;
-}
+	.@{the-prefix}three-tenths {
+	  width: 30%;
+	}
 
-.nine-tenths {
-  width: 90%;
-}
+	.@{the-prefix}seven-tenths {
+	  width: 70%;
+	}
 
-/**
- * Twelfths
- */
-.one-twelfth {
-  width: 8.333%;
-}
+	.@{the-prefix}nine-tenths {
+	  width: 90%;
+	}
 
-.five-twelfths {
-  width: 41.666%;
-}
+	/**
+	 * Twelfths
+	 */
+	.@{the-prefix}one-twelfth {
+	  width: 8.333%;
+	}
 
-.seven-twelfths {
-  width: 58.333%;
-}
+	.@{the-prefix}five-twelfths {
+	  width: 41.666%;
+	}
 
-.eleven-twelfths {
-  width: 91.666%;
-}
+	.@{the-prefix}seven-twelfths {
+	  width: 58.333%;
+	}
 
+	.@{the-prefix}eleven-twelfths {
+	  width: 91.666%;
+	}
+} // .grid-setup(@prefix: 'null') {
+.grid-setup();
 
 /**
  * If you have set `@responsive` to ‘true’ in `vars.less` then you now have
@@ -151,507 +158,22 @@
 
 .responsive-widths() when (@responsive = true) {
 	@media only screen and (max-width:~"@{palm-end}px") { /* palm */
-		/**
-	   * Whole
-	   */
-	  .palm-one-whole {
-	    width: 100%;
-	  }
-
-	  /**
-	   * Halves
-	   */
-	  .palm-one-half, .palm-two-quarters, .palm-three-sixths, .palm-four-eighths, .palm-five-tenths, .palm-six-twelfths {
-	    width: 50%;
-	  }
-
-	  /**
-	   * Thirds
-	   */
-	  .palm-one-third, .palm-two-sixths, .palm-four-twelfths {
-	    width: 33.333%;
-	  }
-
-	  .palm-two-thirds, .palm-four-sixths, .palm-eight-twelfths {
-	    width: 66.666%;
-	  }
-
-	  /**
-	   * Quarters
-	   */
-	  .palm-one-quarter, .palm-two-eighths, .palm-three-twelfths {
-	    width: 25%;
-	  }
-
-	  .palm-three-quarters, .palm-six-eighths, .palm-nine-twelfths {
-	    width: 75%;
-	  }
-
-	  /**
-	   * Fifths
-	   */
-	  .palm-one-fifth, .palm-two-tenths {
-	    width: 20%;
-	  }
-
-	  .palm-two-fifths, .palm-four-tenths {
-	    width: 40%;
-	  }
-
-	  .palm-three-fifths, .palm-six-tenths {
-	    width: 60%;
-	  }
-
-	  .palm-four-fifths, .palm-eight-tenths {
-	    width: 80%;
-	  }
-
-	  /**
-	   * Sixths
-	   */
-	  .palm-one-sixth, .palm-two-twelfths {
-	    width: 16.666%;
-	  }
-
-	  .palm-five-sixths, .palm-ten-twelfths {
-	    width: 83.333%;
-	  }
-
-	  /**
-	   * Eighths
-	   */
-	  .palm-one-eighth {
-	    width: 12.5%;
-	  }
-
-	  .palm-three-eighths {
-	    width: 37.5%;
-	  }
-
-	  .palm-five-eighths {
-	    width: 62.5%;
-	  }
-
-	  .palm-seven-eighths {
-	    width: 87.5%;
-	  }
-
-	  /**
-	   * Tenths
-	   */
-	  .palm-one-tenth {
-	    width: 10%;
-	  }
-
-	  .palm-three-tenths {
-	    width: 30%;
-	  }
-
-	  .palm-seven-tenths {
-	    width: 70%;
-	  }
-
-	  .palm-nine-tenths {
-	    width: 90%;
-	  }
-
-	  /**
-	   * Twelfths
-	   */
-	  .palm-one-twelfth {
-	    width: 8.333%;
-	  }
-
-	  .palm-five-twelfths {
-	    width: 41.666%;
-	  }
-
-	  .palm-seven-twelfths {
-	    width: 58.333%;
-	  }
-
-	  .palm-eleven-twelfths {
-	    width: 91.666%;
-	  }
+	.grid-setup(palm-);
 	  
 	} // @media palm
 	
 	@media only screen and (min-width:~"@{lap-start}px") and (max-width:~"@{lap-end}px") { /* lap */
-	  /**
-	   * Whole
-	   */
-	  .lap-one-whole {
-	    width: 100%;
-	  }
-
-	  /**
-	   * Halves
-	   */
-	  .lap-one-half, .lap-two-quarters, .lap-three-sixths, .lap-four-eighths, .lap-five-tenths, .lap-six-twelfths {
-	    width: 50%;
-	  }
-
-	  /**
-	   * Thirds
-	   */
-	  .lap-one-third, .lap-two-sixths, .lap-four-twelfths {
-	    width: 33.333%;
-	  }
-
-	  .lap-two-thirds, .lap-four-sixths, .lap-eight-twelfths {
-	    width: 66.666%;
-	  }
-
-	  /**
-	   * Quarters
-	   */
-	  .lap-one-quarter, .lap-two-eighths, .lap-three-twelfths {
-	    width: 25%;
-	  }
-
-	  .lap-three-quarters, .lap-six-eighths, .lap-nine-twelfths {
-	    width: 75%;
-	  }
-
-	  /**
-	   * Fifths
-	   */
-	  .lap-one-fifth, .lap-two-tenths {
-	    width: 20%;
-	  }
-
-	  .lap-two-fifths, .lap-four-tenths {
-	    width: 40%;
-	  }
-
-	  .lap-three-fifths, .lap-six-tenths {
-	    width: 60%;
-	  }
-
-	  .lap-four-fifths, .lap-eight-tenths {
-	    width: 80%;
-	  }
-
-	  /**
-	   * Sixths
-	   */
-	  .lap-one-sixth, .lap-two-twelfths {
-	    width: 16.666%;
-	  }
-
-	  .lap-five-sixths, .lap-ten-twelfths {
-	    width: 83.333%;
-	  }
-
-	  /**
-	   * Eighths
-	   */
-	  .lap-one-eighth {
-	    width: 12.5%;
-	  }
-
-	  .lap-three-eighths {
-	    width: 37.5%;
-	  }
-
-	  .lap-five-eighths {
-	    width: 62.5%;
-	  }
-
-	  .lap-seven-eighths {
-	    width: 87.5%;
-	  }
-
-	  /**
-	   * Tenths
-	   */
-	  .lap-one-tenth {
-	    width: 10%;
-	  }
-
-	  .lap-three-tenths {
-	    width: 30%;
-	  }
-
-	  .lap-seven-tenths {
-	    width: 70%;
-	  }
-
-	  .lap-nine-tenths {
-	    width: 90%;
-	  }
-
-	  /**
-	   * Twelfths
-	   */
-	  .lap-one-twelfth {
-	    width: 8.333%;
-	  }
-
-	  .lap-five-twelfths {
-	    width: 41.666%;
-	  }
-
-	  .lap-seven-twelfths {
-	    width: 58.333%;
-	  }
-
-	  .lap-eleven-twelfths {
-	    width: 91.666%;
-	  }
-
+		.grid-setup(lap-);
 	} // @media lap
 
 
 	@media only screen and (max-width:~"@{lap-end}px") { /* portable */
-	  /**
-	   * Whole
-	   */
-	  .portable-one-whole {
-	    width: 100%;
-	  }
-
-	  /**
-	   * Halves
-	   */
-	  .portable-one-half, .portable-two-quarters, .portable-three-sixths, .portable-four-eighths, .portable-five-tenths, .portable-six-twelfths {
-	    width: 50%;
-	  }
-
-	  /**
-	   * Thirds
-	   */
-	  .portable-one-third, .portable-two-sixths, .portable-four-twelfths {
-	    width: 33.333%;
-	  }
-
-	  .portable-two-thirds, .portable-four-sixths, .portable-eight-twelfths {
-	    width: 66.666%;
-	  }
-
-	  /**
-	   * Quarters
-	   */
-	  .portable-one-quarter, .portable-two-eighths, .portable-three-twelfths {
-	    width: 25%;
-	  }
-
-	  .portable-three-quarters, .portable-six-eighths, .portable-nine-twelfths {
-	    width: 75%;
-	  }
-
-	  /**
-	   * Fifths
-	   */
-	  .portable-one-fifth, .portable-two-tenths {
-	    width: 20%;
-	  }
-
-	  .portable-two-fifths, .portable-four-tenths {
-	    width: 40%;
-	  }
-
-	  .portable-three-fifths, .portable-six-tenths {
-	    width: 60%;
-	  }
-
-	  .portable-four-fifths, .portable-eight-tenths {
-	    width: 80%;
-	  }
-
-	  /**
-	   * Sixths
-	   */
-	  .portable-one-sixth, .portable-two-twelfths {
-	    width: 16.666%;
-	  }
-
-	  .portable-five-sixths, .portable-ten-twelfths {
-	    width: 83.333%;
-	  }
-
-	  /**
-	   * Eighths
-	   */
-	  .portable-one-eighth {
-	    width: 12.5%;
-	  }
-
-	  .portable-three-eighths {
-	    width: 37.5%;
-	  }
-
-	  .portable-five-eighths {
-	    width: 62.5%;
-	  }
-
-	  .portable-seven-eighths {
-	    width: 87.5%;
-	  }
-
-	  /**
-	   * Tenths
-	   */
-	  .portable-one-tenth {
-	    width: 10%;
-	  }
-
-	  .portable-three-tenths {
-	    width: 30%;
-	  }
-
-	  .portable-seven-tenths {
-	    width: 70%;
-	  }
-
-	  .portable-nine-tenths {
-	    width: 90%;
-	  }
-
-	  /**
-	   * Twelfths
-	   */
-	  .portable-one-twelfth {
-	    width: 8.333%;
-	  }
-
-	  .portable-five-twelfths {
-	    width: 41.666%;
-	  }
-
-	  .portable-seven-twelfths {
-	    width: 58.333%;
-	  }
-
-	  .portable-eleven-twelfths {
-	    width: 91.666%;
-	  }
+		.grid-setup(portable-);
 	} // @media portable
 
 
 	@media only screen and (min-width:~"@{desk-start}px") { /* desk */
-	  /**
-	   * Whole
-	   */
-	  .desk-one-whole {
-	    width: 100%;
-	  }
-
-	  /**
-	   * Halves
-	   */
-	  .desk-one-half, .desk-two-quarters, .desk-three-sixths, .desk-four-eighths, .desk-five-tenths, .desk-six-twelfths {
-	    width: 50%;
-	  }
-
-	  /**
-	   * Thirds
-	   */
-	  .desk-one-third, .desk-two-sixths, .desk-four-twelfths {
-	    width: 33.333%;
-	  }
-
-	  .desk-two-thirds, .desk-four-sixths, .desk-eight-twelfths {
-	    width: 66.666%;
-	  }
-
-	  /**
-	   * Quarters
-	   */
-	  .desk-one-quarter, .desk-two-eighths, .desk-three-twelfths {
-	    width: 25%;
-	  }
-
-	  .desk-three-quarters, .desk-six-eighths, .desk-nine-twelfths {
-	    width: 75%;
-	  }
-
-	  /**
-	   * Fifths
-	   */
-	  .desk-one-fifth, .desk-two-tenths {
-	    width: 20%;
-	  }
-
-	  .desk-two-fifths, .desk-four-tenths {
-	    width: 40%;
-	  }
-
-	  .desk-three-fifths, .desk-six-tenths {
-	    width: 60%;
-	  }
-
-	  .desk-four-fifths, .desk-eight-tenths {
-	    width: 80%;
-	  }
-
-	  /**
-	   * Sixths
-	   */
-	  .desk-one-sixth, .desk-two-twelfths {
-	    width: 16.666%;
-	  }
-
-	  .desk-five-sixths, .desk-ten-twelfths {
-	    width: 83.333%;
-	  }
-
-	  /**
-	   * Eighths
-	   */
-	  .desk-one-eighth {
-	    width: 12.5%;
-	  }
-
-	  .desk-three-eighths {
-	    width: 37.5%;
-	  }
-
-	  .desk-five-eighths {
-	    width: 62.5%;
-	  }
-
-	  .desk-seven-eighths {
-	    width: 87.5%;
-	  }
-
-	  /**
-	   * Tenths
-	   */
-	  .desk-one-tenth {
-	    width: 10%;
-	  }
-
-	  .desk-three-tenths {
-	    width: 30%;
-	  }
-
-	  .desk-seven-tenths {
-	    width: 70%;
-	  }
-
-	  .desk-nine-tenths {
-	    width: 90%;
-	  }
-
-	  /**
-	   * Twelfths
-	   */
-	  .desk-one-twelfth {
-	    width: 8.333%;
-	  }
-
-	  .desk-five-twelfths {
-	    width: 41.666%;
-	  }
-
-	  .desk-seven-twelfths {
-	    width: 58.333%;
-	  }
-
-	  .desk-eleven-twelfths {
-	    width: 91.666%;
-	  }
+		.grid-setup(desk-);
 	} // @media desk
 } //responsive=true mixin
 
