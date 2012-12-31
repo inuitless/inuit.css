@@ -22,6 +22,13 @@ can not be ported exactly. Some differences are:
   slightly different
 * debug mode is unavailable. This may be re-added down the track
 
+## License
+
+LESS adaption copyright 2012 Peter Wilson
+Original work copyright 2012 Harry Roberts
+
+Licensed under the Apache License, Version 2.0.
+
 ---
 
 # ![inuit.css](https://a248.e.akamai.net/camo.github.com/b402c145cb1134727d8b1416c7f080731cca1244/687474703a2f2f63737377697a61726472792e636f6d2f696e7569746373732f696d672f6c6f676f2e6a7067)
