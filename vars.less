@@ -35,6 +35,15 @@
 
 
 /**
+ * Responsiveness?
+ * Tell inuit.css when breakpoints start, in pixels.
+ */
+@responsive:        true;
+@lap-start:         481;
+@desk-start:        1024;
+
+
+/**
  * Font-sizes (in pixels). Refer to relevant sections for their implementations.
  */
 @giga-size:         96;
@@ -67,3 +76,6 @@
 @base-spacing-unit: @base-line-height;
 @half-spacing-unit: @base-spacing-unit / 2;
 @line-height-ratio: @base-line-height/@base-font-size;
+
+@palm-end:@lap-start*1-1;
+@lap-end:@desk-start*1-1;
