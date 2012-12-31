@@ -2,13 +2,24 @@
 
 This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/).
 
-The LESS version is up-to-date as of v4.2.1. To view changes to 
+The LESS version is up-to-date as of v4.3. To view changes to 
 the original that are waiting to be incorporated, visit the 
 [compare page](https://github.com/csswizardry/inuit.css/compare/v4.2.1...master).
 If you're getting impatient, feel free to submit a pull request.
 
 This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
 I like inuit.css and my team and I use LESS.
+
+## Differences
+
+LESS and sass are different languages, some features of the original 
+can not be ported exactly. Some differences are:
+
+* no keyframe mixin
+* no media-query mixin - you can still set up the responsive values 
+  in vars.less for use with the responsive grid.
+* arrows mixin produces the same effect but the output code is 
+  slightly different
 
 ---
 
