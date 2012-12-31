@@ -24,7 +24,7 @@ can not be ported exactly. Some differences are:
 
 ## License
 
-LESS adaption copyright 2012 Peter Wilson
+LESS adaption copyright 2012 Peter Wilson  
 Original work copyright 2012 Harry Roberts
 
 Licensed under the Apache License, Version 2.0.
