@@ -4,14 +4,16 @@
 /**
  * Push classes, to move grid items over to the right by certain amounts.
  */
+
+/**
+ * Not a particularly great selector, but the DRYest way to do things.
+ */
+[class*="push--"]{ position:relative; }
+
 .push-setup(@prefix: 'null') {
   // no access to outer scope
   @p: @prefix;
   @the-prefix: ~`(this.p.toJS() == "'null'")?'':this.p.toJS()`;
-
-  .push--@{the-prefix}, .push--@{the-prefix}one-whole, .push--@{the-prefix}one-half, .push--@{the-prefix}two-quarters, .push--@{the-prefix}three-sixths, .push--@{the-prefix}four-eighths, .push--@{the-prefix}six-twelfths, .push--@{the-prefix}one-third, .push--@{the-prefix}two-sixths, .push--@{the-prefix}four-twelfths, .push--@{the-prefix}two-thirds, .push--@{the-prefix}four-sixths, .push--@{the-prefix}eight-twelfths, .push--@{the-prefix}one-quarter, .push--@{the-prefix}two-eighths, .push--@{the-prefix}three-twelfths, .push--@{the-prefix}three-quarters, .push--@{the-prefix}six-eighths, .push--@{the-prefix}nine-twelfths, .push--@{the-prefix}one-fifth, .push--@{the-prefix}two-tenths, .push--@{the-prefix}two-fifths, .push--@{the-prefix}four-tenths, .push--@{the-prefix}three-fifths, .push--@{the-prefix}six-tenths, .push--@{the-prefix}four-fifths, .push--@{the-prefix}eight-tenths, .push--@{the-prefix}one-sixth, .push--@{the-prefix}two-twelfths, .push--@{the-prefix}five-sixths, .push--@{the-prefix}ten-twelfths, .push--@{the-prefix}one-eighth, .push--@{the-prefix}three-eighths, .push--@{the-prefix}five-eighths, .push--@{the-prefix}seven-eighths, .push--@{the-prefix}one-tenth, .push--@{the-prefix}three-tenths, .push--@{the-prefix}five-tenths, .push--@{the-prefix}seven-tenths, .push--@{the-prefix}nine-tenths, .push--@{the-prefix}one-twelfth, .push--@{the-prefix}five-twelfths, .push--@{the-prefix}seven-twelfths, .push--@{the-prefix}eleven-twelfths {
-    position: relative;
-  }
 
   /**
    * Whole
