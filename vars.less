@@ -25,6 +25,13 @@
 @global-border-box: true;
 
 
+/*
+ * Would you like to use Adam Whitcroft’s Batch icon font, as per:
+ * adamwhitcroft.com/batch ?
+ */
+@batch:             false;
+
+
 /**
  * Base stuff
  */
@@ -39,9 +46,19 @@
 
 /**
  * Responsiveness?
- * Tell inuit.css when breakpoints start, in pixels.
  */
 @responsive:        true;
+
+/**
+ * Responsive push and pull produce a LOT of code, only turn them on if you
+ * definitely need them.
+ */
+@responsive-push:   false;
+@responsive-pull:   false;
+
+/**
+ * Tell inuit.css when breakpoints start.
+ */
 @lap-start:         481;
 @desk-start:        1024;
 

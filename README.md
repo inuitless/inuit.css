@@ -2,9 +2,9 @@
 
 This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/).
 
-The LESS version is up-to-date as of v4.3.7. To view changes to 
+The LESS version is up-to-date as of v4.5. To view changes to 
 the original that are waiting to be incorporated, visit the 
-[compare page](https://github.com/csswizardry/inuit.css/compare/v4.3.7...master).
+[compare page](https://github.com/csswizardry/inuit.css/compare/v4.5...master).
 If you're getting impatient, feel free to submit a pull request.
 
 This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
