@@ -4,126 +4,165 @@
 /**
  * Pull classes, to move grid items over to the left by certain amounts.
  */
-.pull, .pull--one-half, .pull--two-quarters, .pull--three-sixths, .pull--four-eighths, .pull--six-twelfths, .pull--one-third, .pull--two-sixths, .pull--four-twelfths, .pull--two-thirds, .pull--four-sixths, .pull--eight-twelfths, .pull--one-quarter, .pull--two-eighths, .pull--three-twelfths, .pull--three-quarters, .pull--six-eighths, .pull--nine-twelfths, .pull--one-fifth, .pull--two-tenths, .pull--two-fifths, .pull--four-tenths, .pull--three-fifths, .pull--six-tenths, .pull--four-fifths, .pull--eight-tenths, .pull--one-sixth, .pull--two-twelfths, .pull--five-sixths, .pull--ten-twelfths, .pull--one-eighth, .pull--three-eighths, .pull--five-eighths, .pull--seven-eighths, .pull--one-tenth, .pull--three-tenths, .pull--five-tenths, .pull--seven-tenths, .pull--nine-tenths, .pull--one-twelfth, .pull--five-twelfths, .pull--seven-twelfths, .pull--eleven-twelfths {
-  position: relative;
+.pull-setup(@prefix: 'null') {
+  // no access to outer scope
+  @p: @prefix;
+  @the-prefix: ~`(this.p.toJS() == "'null'")?'':this.p.toJS()`;
+
+  .pull--@{the-prefix}, .pull--@{the-prefix}one-half, .pull--@{the-prefix}two-quarters, .pull--@{the-prefix}three-sixths, .pull--@{the-prefix}four-eighths, .pull--@{the-prefix}six-twelfths, .pull--@{the-prefix}one-third, .pull--@{the-prefix}two-sixths, .pull--@{the-prefix}four-twelfths, .pull--@{the-prefix}two-thirds, .pull--@{the-prefix}four-sixths, .pull--@{the-prefix}eight-twelfths, .pull--@{the-prefix}one-quarter, .pull--@{the-prefix}two-eighths, .pull--@{the-prefix}three-twelfths, .pull--@{the-prefix}three-quarters, .pull--@{the-prefix}six-eighths, .pull--@{the-prefix}nine-twelfths, .pull--@{the-prefix}one-fifth, .pull--@{the-prefix}two-tenths, .pull--@{the-prefix}two-fifths, .pull--@{the-prefix}four-tenths, .pull--@{the-prefix}three-fifths, .pull--@{the-prefix}six-tenths, .pull--@{the-prefix}four-fifths, .pull--@{the-prefix}eight-tenths, .pull--@{the-prefix}one-sixth, .pull--@{the-prefix}two-twelfths, .pull--@{the-prefix}five-sixths, .pull--@{the-prefix}ten-twelfths, .pull--@{the-prefix}one-eighth, .pull--@{the-prefix}three-eighths, .pull--@{the-prefix}five-eighths, .pull--@{the-prefix}seven-eighths, .pull--@{the-prefix}one-tenth, .pull--@{the-prefix}three-tenths, .pull--@{the-prefix}five-tenths, .pull--@{the-prefix}seven-tenths, .pull--@{the-prefix}nine-tenths, .pull--@{the-prefix}one-twelfth, .pull--@{the-prefix}five-twelfths, .pull--@{the-prefix}seven-twelfths, .pull--@{the-prefix}eleven-twelfths {
+    position: relative;
+  }
+
+  /**
+   * Whole
+   */
+  .pull--@{the-prefix}one-whole {
+    right: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  .pull--@{the-prefix}one-half, .pull--@{the-prefix}two-quarters, .pull--@{the-prefix}three-sixths, .pull--@{the-prefix}four-eighths, .pull--@{the-prefix}six-twelfths {
+    right: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  .pull--@{the-prefix}one-third, .pull--@{the-prefix}two-sixths, .pull--@{the-prefix}four-twelfths {
+    right: 33.333%;
+  }
+
+  .pull--@{the-prefix}two-thirds, .pull--@{the-prefix}four-sixths, .pull--@{the-prefix}eight-twelfths {
+    right: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  .pull--@{the-prefix}one-quarter, .pull--@{the-prefix}two-eighths, .pull--@{the-prefix}three-twelfths {
+    right: 25%;
+  }
+
+  .pull--@{the-prefix}three-quarters, .pull--@{the-prefix}six-eighths, .pull--@{the-prefix}nine-twelfths {
+    right: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  .pull--@{the-prefix}one-fifth, .pull--@{the-prefix}two-tenths {
+    right: 20%;
+  }
+
+  .pull--@{the-prefix}two-fifths, .pull--@{the-prefix}four-tenths {
+    right: 40%;
+  }
+
+  .pull--@{the-prefix}three-fifths, .pull--@{the-prefix}six-tenths {
+    right: 60%;
+  }
+
+  .pull--@{the-prefix}four-fifths, .pull--@{the-prefix}eight-tenths {
+    right: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  .pull--@{the-prefix}one-sixth, .pull--@{the-prefix}two-twelfths {
+    right: 16.666%;
+  }
+
+  .pull--@{the-prefix}five-sixths, .pull--@{the-prefix}ten-twelfths {
+    right: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  .pull--@{the-prefix}one-eighth {
+    right: 12.5%;
+  }
+
+  .pull--@{the-prefix}three-eighths {
+    right: 37.5%;
+  }
+
+  .pull--@{the-prefix}five-eighths {
+    right: 62.5%;
+  }
+
+  .pull--@{the-prefix}seven-eighths {
+    right: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  .pull--@{the-prefix}one-tenth {
+    right: 10%;
+  }
+
+  .pull--@{the-prefix}three-tenths {
+    right: 30%;
+  }
+
+  .pull--@{the-prefix}five-tenths {
+    right: 50%;
+  }
+
+  .pull--@{the-prefix}seven-tenths {
+    right: 70%;
+  }
+
+  .pull--@{the-prefix}nine-tenths {
+    right: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  .pull--@{the-prefix}one-twelfth {
+    right: 8.333%;
+  }
+
+  .pull--@{the-prefix}five-twelfths {
+    right: 41.666%;
+  }
+
+  .pull--@{the-prefix}seven-twelfths {
+    right: 58.333%;
+  }
+
+  .pull--@{the-prefix}eleven-twelfths {
+    right: 91.666%;
+  }
+} // .pull-setup(@prefix: 'null') {
+.pull-setup();
+
+.responsive-pulls() when (@responsive-pull = false) {
 }
 
-/**
- * Halves
- */
-.pull--one-half, .pull--two-quarters, .pull--three-sixths, .pull--four-eighths, .pull--six-twelfths {
-  right: 50%;
-}
+.responsive-pulls() when (@responsive-pull = true) {
+  @media only screen and (max-width:~"@{palm-end}px") { /* palm */
+    .pull-setup(palm-);
+  } // @media palm
+  
+  @media only screen and (min-width:~"@{lap-start}px") and (max-width:~"@{lap-end}px") { /* lap */
+    .pull-setup(lap-);
+  } // @media lap
 
-/**
- * Thirds
- */
-.pull--one-third, .pull--two-sixths, .pull--four-twelfths {
-  right: 33.333%;
-}
 
-.pull--two-thirds, .pull--four-sixths, .pull--eight-twelfths {
-  right: 66.666%;
-}
+  @media only screen and (max-width:~"@{lap-end}px") { /* portable */
+    .pull-setup(portable-);
+  } // @media portable
 
-/**
- * Quarters
- */
-.pull--one-quarter, .pull--two-eighths, .pull--three-twelfths {
-  right: 25%;
-}
 
-.pull--three-quarters, .pull--six-eighths, .pull--nine-twelfths {
-  right: 75%;
-}
+  @media only screen and (min-width:~"@{desk-start}px") { /* desk */
+    .pull-setup(desk-);
+  } // @media desk
+} //responsive-pull=true mixin
 
-/**
- * Fifths
- */
-.pull--one-fifth, .pull--two-tenths {
-  right: 20%;
-}
-
-.pull--two-fifths, .pull--four-tenths {
-  right: 40%;
-}
-
-.pull--three-fifths, .pull--six-tenths {
-  right: 60%;
-}
-
-.pull--four-fifths, .pull--eight-tenths {
-  right: 80%;
-}
-
-/**
- * Sixths
- */
-.pull--one-sixth, .pull--two-twelfths {
-  right: 16.666%;
-}
-
-.pull--five-sixths, .pull--ten-twelfths {
-  right: 83.333%;
-}
-
-/**
- * Eighths
- */
-.pull--one-eighth {
-  right: 12.5%;
-}
-
-.pull--three-eighths {
-  right: 37.5%;
-}
-
-.pull--five-eighths {
-  right: 62.5%;
-}
-
-.pull--seven-eighths {
-  right: 87.5%;
-}
-
-/**
- * Tenths
- */
-.pull--one-tenth {
-  right: 10%;
-}
-
-.pull--three-tenths {
-  right: 30%;
-}
-
-.pull--five-tenths {
-  right: 50%;
-}
-
-.pull--seven-tenths {
-  right: 70%;
-}
-
-.pull--nine-tenths {
-  right: 90%;
-}
-
-/**
- * Twelfths
- */
-.pull--one-twelfth {
-  right: 8.333%;
-}
-
-.pull--five-twelfths {
-  right: 41.666%;
-}
-
-.pull--seven-twelfths {
-  right: 58.333%;
-}
-
-.pull--eleven-twelfths {
-  right: 91.666%;
-}
+.responsive-pulls();
