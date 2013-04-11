@@ -83,6 +83,30 @@
 
 
 /**
+ * English quote marks?
+ */
+@english-quotes:    true;
+
+/**
+ * If you want English quotes then please do not edit this; it's only here
+ * because LESS needs it.
+ */
+.english-quotes() when (@english-quotes = true) {
+}
+
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+.english-quotes() when (@english-quotes = false) {
+    @open-quote:    '«';
+    @close-quote:   '»';
+}
+
+.english-quotes();
+
+
+/**
+
  * Brand stuff
  */
 @brand-color:       #4a8ec2;
