@@ -115,6 +115,12 @@
     left: -9999px;
   }
 }
+@media only screen and (min-width:~"@{lap-start}") {
+  .hide--lap-and-up {
+    position: absolute;
+    left: -9999px;
+  }
+}
 @media only screen and (max-width:~"@{lap-end}px") {
   .hide--portable {
     position: absolute;
@@ -123,6 +129,11 @@
 }
 @media only screen and (min-width:~"@{desk-start}px") {
   .hide--desk {
+    position: absolute;
+    left: -9999px;
+  }
+@media only screen and (min-width:~"@{desk-wide-start}px") {
+  .hide--desk-wide {
     position: absolute;
     left: -9999px;
   }
