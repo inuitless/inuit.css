@@ -325,6 +325,7 @@
  * lap-and-up
  * portable
  * desk
+ * desk-wide
  *
  * Not using a media query will, naturally, serve styles to all devices.
  *
@@ -1261,7 +1262,6 @@ a:focus {
  */
 img {
   max-width: 100%;
-  height: auto;
 }
 /**
  * Non-fluid images if you specify `width` and/or `height` attributes.
