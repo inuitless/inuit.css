@@ -4,22 +4,27 @@
 /**
  * Demo: jsfiddle.net/inuitcss/yMtur
  */
-.responsive-imgs() when (@flexible-media = false) {
+/**
+ * Fluid images.
+ */
+img{
+    max-width:100%;
+    height:auto;
 }
 
-.responsive-imgs() when (@flexible-media = true) {
-    img{
-        max-width:100%;
-        height:auto;
-    }
-} //flexible-media=true mixin
 
-.responsive-imgs();
+/**
+ * Non-fluid images if you specify `width` and/or `height` attributes.
+ */
+img[width],
+img[height]{
+    max-width:none;
+}
 
 
 /**
  * Keep your images on your baseline.
- * 
+ *
  * Please note, these will not work too nicely with fluid images and will
  * distort when resized below a certain width. Use with caution.
  */
