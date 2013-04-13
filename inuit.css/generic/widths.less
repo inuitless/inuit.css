@@ -178,3 +178,20 @@
 } //responsive=true mixin
 
 .responsive-widths();
+
+/**
+ * If you have set the additional `$responsive-extra` variable to ‘true’
+ * in `_vars.scss` then you now have access to the following class available to
+ * accomodate much larger screen resolutions.
+ */
+
+.responsive-extra-widths() when (@responsive-extra = false) {
+}
+
+.responsive-extra-widths() when (@responsive-extra = true) {
+	@media only screen and (min-width:~"@{desk-wide-start}px") { /* deskwide */
+		.grid-setup(deskwide-);
+	} // @media deskwide
+} //responsive-extra=true mixin
+
+.responsive-extra-widths();

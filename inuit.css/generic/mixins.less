@@ -373,5 +373,11 @@
         
     }
     
+    @if $media-query == desk-wide{
+
+        @media only screen and (min-width: $desk-wide-start) { @content; }
+
+    }
+
 }
 */
