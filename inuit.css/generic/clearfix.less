@@ -2,7 +2,7 @@
     $CLEARFIX
 \*------------------------------------*/
 /**
- * Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
@@ -16,15 +16,9 @@
 .matrix,
 .multi-list,
 .stat-group{
-    zoom:1;
-    
-    &:before,
     &:after{
-        content:" ";
+        content:"";
         display:table;
-    }
-    
-    &:after{
         clear:both;
     }
 }
