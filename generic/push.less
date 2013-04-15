@@ -1,3 +1,6 @@
+.responsive-pushs() when (@push = false) {}
+.responsive-pushs() when (@push = true) {
+
 /*------------------------------------*\
     $PUSH
 \*------------------------------------*/
@@ -195,3 +198,7 @@
 .lap-and-up-pushs();
 .portable-pushs();
 .desk-pushs();
+
+} // push=true mixin
+
+.responsive-pushs();
