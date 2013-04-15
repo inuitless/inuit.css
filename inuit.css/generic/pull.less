@@ -144,27 +144,54 @@
 } // .pull-setup(@prefix: 'null') {
 .pull-setup();
 
-.responsive-pulls() when (@responsive-pull = false) {
-}
 
-.responsive-pulls() when (@responsive-pull = true) {
+.palm-pulls() when (@palm-pull = false) {
+}
+.palm-pulls() when (@palm-pull = true) {
   @media only screen and (max-width:~"@{palm-end}px") { /* palm */
     .pull-setup(palm-);
   } // @media palm
+} // palm-pull=true mixin
 
+
+.lap-pulls() when (@lap-pull = false) {
+}
+.lap-pulls() when (@lap-pull = true) {
   @media only screen and (min-width:~"@{lap-start}px") and (max-width:~"@{lap-end}px") { /* lap */
     .pull-setup(lap-);
   } // @media lap
+} // lap-pull=true mixin
 
 
+.lap-and-up-pulls() when (@lap-and-up-pull = false) {
+}
+.lap-and-up-pulls() when (@lap-and-up-pull = true) {
+  @media only screen and (min-width:~"@{lap-start}px") { /* lap-and-up */
+    .pull-setup(lap-and-up-);
+  } // @media lap-and-up
+} // lap-and-up-pull=true mixin
+
+
+.portable-pulls() when (@portable-pull = false) {
+}
+.portable-pulls() when (@portable-pull = true) {
   @media only screen and (max-width:~"@{lap-end}px") { /* portable */
     .pull-setup(portable-);
   } // @media portable
+} // portable-pull=true mixin
 
 
+.desk-pulls() when (@desk-pull = false) {
+}
+.desk-pulls() when (@desk-pull = true) {
   @media only screen and (min-width:~"@{desk-start}px") { /* desk */
     .pull-setup(desk-);
   } // @media desk
-} //responsive-pull=true mixin
+} // desk-pull=true mixin
 
-.responsive-pulls();
+
+.palm-pulls();
+.lap-pulls();
+.lap-and-up-pulls();
+.portable-pulls();
+.desk-pulls();
