@@ -165,6 +165,9 @@
 		.grid-setup(lap-);
 	} // @media lap
 
+	@media only screen and (min-width:~"@{lap-start}px") { /* lap-and-up */
+		.grid-setup(lap-and-up-);
+	} // @media lap-and-up
 
 	@media only screen and (max-width:~"@{lap-end}px") { /* portable */
 		.grid-setup(portable-);
@@ -188,9 +191,9 @@
 }
 
 .responsive-extra-widths() when (@responsive-extra = true) {
-	@media only screen and (min-width:~"@{desk-wide-start}px") { /* deskwide */
-		.grid-setup(deskwide-);
-	} // @media deskwide
+	@media only screen and (min-width:~"@{desk-wide-start}px") { /* desk-wide */
+		.grid-setup(desk-wide-);
+	} // @media desk-wide
 } //responsive-extra=true mixin
 
 .responsive-extra-widths();
