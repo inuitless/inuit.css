@@ -67,40 +67,20 @@
 }
 
 /**
- * Set up Batch icon font
+ * Set up icon font
  */
-.batch-i() when (@batch = false) {
-    .i{
-        font-size:16px;
-        /**
-         * Place the icon in a box the exact same dimensions as the icon itself.
-         */
-        width:1em;
-        height:1em;
+.i{
+    font-size:16px;
+    /**
+     * Place the icon in a box the exact same dimensions as the icon itself.
+     */
+    width:1em;
+    height:1em;
 
-        &:before{
-            content:attr(data-icon);
-        }
+    &:before{
+        content:attr(data-icon);
     }
 }
-
-.batch-i() when (@batch = true) {
-    .i{
-        font-family:Batch;
-        font-size:16px;
-        /**
-         * Place the icon in a box the exact same dimensions as the icon itself.
-         */
-        width:1em;
-        height:1em;
-
-        &:before{
-            content:attr(data-icon);
-        }
-    }
-}
-
-.batch-i();
 
 /**
  * Icon size modifiers.
