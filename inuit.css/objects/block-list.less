@@ -17,24 +17,10 @@
  *
  */
 .block-list{
-
-    &,
-    > li{
-        border:0 solid #ccc; /* Override this color in your theme stylesheet */
-    }
-}
-.block-list{
-    list-style:none;
-    margin-left:0;
-    border-top-width:1px;
-
-    > li{
-        border-bottom-width:1px;
-        padding:@half-spacing-unit*1px;
-    }
+    // LESS - See mixin.less
+    .block-lists();
 }
         .block-list__link{
-            display:block;
-            padding:@half-spacing-unit*1px;
-            margin:-1*@half-spacing-unit*1px;
+          // LESS - See mixin.less
+          .block-list-links();
         }

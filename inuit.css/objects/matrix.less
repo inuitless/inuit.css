@@ -18,31 +18,22 @@
  *
  */
 .matrix{
-
-    &,
-    > li{
-        border:0 solid #ccc; /* Override this color in your theme stylesheet */
-    }
-}
-.matrix{
-    list-style:none;
-    margin-left:0;
-    border-top-width: 1px;
+    // @extend .block-list;
+    // LESS - See mixin.less
+    .block-lists();
     border-left-width:1px;
     /* @extend .cf; */
 
     > li{
-        padding:@half-spacing-unit*1px;
         float:left;
         border-right-width: 1px;
-        border-bottom-width:1px;
         .do-selective-border-box(@global-border-box);
     }
 }
         .matrix__link{
-            display:block;
-            padding:@half-spacing-unit*1px;
-            margin:@half-spacing-unit*-1px;
+            // @extend .block-list__link;
+            // LESS - See mixin.less
+            .block-list-links();
         }
 
 
