@@ -1,0 +1,33 @@
+.set-block-lists() when (@use-block-list = false) {}
+.set-block-lists() when (@use-block-list = true) {
+
+/*------------------------------------*\
+    $BLOCK-LIST
+\*------------------------------------*/
+/**
+ * Create big blocky lists of content, e.g.:
+ *
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ *
+ */
+.block-list{
+    // LESS - See mixin.less
+    .block-lists();
+}
+        .block-list__link{
+          // LESS - See mixin.less
+          .block-list-links();
+        }
+
+} // use-block-list=true mixin
+
+.set-block-lists();

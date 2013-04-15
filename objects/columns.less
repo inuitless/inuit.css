@@ -1,0 +1,29 @@
+.set-columns() when (@use-columns = false) {}
+.set-columns() when (@use-columns = true) {
+
+/*------------------------------------*\
+    $COLUMNS
+\*------------------------------------*/
+/**
+ * Here we can set elements in columns of text using CSS3, e.g.:
+ *
+   <p class=text-cols-2>
+ *
+ * Demo: jsfiddle.net/inuitcss/E26Yd
+ *
+ */
+/* .text-cols, */
+.text-cols--2,
+.text-cols--3,
+.text-cols--4,
+.text-cols--5{
+    .column-gap(@base-spacing-unit*1px);
+}
+.text-cols--2    { .column-count(2); }
+.text-cols--3    { .column-count(3); }
+.text-cols--4    { .column-count(4); }
+.text-cols--5    { .column-count(5); }
+
+} // use-columns=true mixin
+
+.set-columns();

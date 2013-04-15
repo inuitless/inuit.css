@@ -1,0 +1,215 @@
+/*------------------------------------*\
+    $DEFAULTS
+\*------------------------------------*/
+/**
+ * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
+ * in the inuit.css-web-template) to override them.
+ *
+ * In the LESS version of inuit.css, these value are measured in pixels but
+ * should be unitless when set below.
+ */
+
+
+
+
+/*------------------------------------*\
+    $DEBUG
+\*------------------------------------*/
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+@debug-mode:        false;
+
+
+
+
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+@global-border-box: true;
+
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/*
+ * Base stuff
+ */
+@base-font-size:    16;
+@base-line-height:  24;
+
+/**
+ * Base font-family.
+ */
+@base-font-family:  sans-serif;
+
+/**
+ * Default colour for objects’ borders etc.
+ */
+@base-ui-color:     #ccc;
+
+
+
+
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+/**
+ * Responsiveness?
+ */
+@responsive:        true;
+
+/**
+ * Responsiveness for widescreen/high resolution desktop monitors and beyond?
+ * Note: $responsive parameter above must be enabled before enabling this.
+ */
+@responsive-extra:  false;
+
+/**
+ * Responsive push and pull produce a LOT of code, only turn them on if you
+ * definitely need them.
+ */
+@palm-push:         false;
+@lap-push:          false;
+@lap-and-up-push:   false;
+@portable-push:     false;
+@desk-push:         false;
+
+@palm-pull:         false;
+@lap-pull:          false;
+@lap-and-up-pull:   false;
+@portable-pull:     false;
+@desk-pull:         false;
+
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+@lap-start:         481;
+@desk-start:        1024;
+@desk-wide-start:   1200;
+
+
+
+
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+@giga-size:         96;
+@mega-size:         72;
+@kilo-size:         48;
+
+@h1-size:           36; // .alpha
+@h2-size:           30; // .beta
+@h3-size:           24; // .gamma
+@h4-size:           20; // .delta
+@h5-size:           16; // .epsilon
+@h6-size:           14; // .zeta
+
+@milli-size:        12;
+@micro-size:        10;
+
+
+
+
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+@english-quotes:    true;
+
+/**
+ * If you want English quotes then please do not edit this; it's only here
+ * because LESS needs it.
+ */
+.english-quotes() when (@english-quotes = true) {
+}
+
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+.english-quotes() when (@english-quotes = false) {
+    @open-quote:    '«';
+    @close-quote:   '»';
+}
+
+.english-quotes();
+
+
+
+
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+@brand-color:       #4a8ec2;
+@brand-face:        "Helvetica Neue", sans-serif;
+/**
+ * How big would you like round corners to be by default?
+ */
+@brand-round:        4px;
+
+
+
+
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+@use-grids:         false;
+@use-flexbox:       false;
+@use-columns:       false;
+@use-nav:           false;
+@use-options:       false;
+@use-pagination:    false;
+@use-breadcrumb:    false;
+@use-media:         false;
+@use-marginalia:    false;
+@use-island:        false;
+@use-block-list:    false;
+@use-matrix:        false;
+@use-split:         false;
+@use-this-or-this:  false;
+@use-link-complex:  false;
+@use-flyout:        false;
+@use-arrows:        false;
+@use-sprite:        false;
+@use-icon-text:     false;
+@use-beautons:      false;
+@use-lozenges:      false;
+@use-rules:         false;
+@use-stats:         false;
+@use-greybox:       false;
+
+
+
+
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+@base-spacing-unit: @base-line-height;
+@half-spacing-unit: @base-spacing-unit / 2;
+@line-height-ratio: @base-line-height/@base-font-size;
+
+@palm-end:@lap-start*1-1;
+@lap-end:@desk-start*1-1;
