@@ -2,9 +2,9 @@
 
 This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/).
 
-The LESS version is up-to-date as of v4.5. To view changes to 
-the original that are waiting to be incorporated, visit the 
-[compare page](https://github.com/csswizardry/inuit.css/compare/v4.5...master).
+The LESS version is up-to-date as of v4.5.5 To view changes to
+the original that are waiting to be incorporated, visit the
+[compare page](https://github.com/csswizardry/inuit.css/compare/v4.5.5...master).
 If you're getting impatient, feel free to submit a pull request.
 
 This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
@@ -12,18 +12,18 @@ I like inuit.css and my team and I use LESS.
 
 ## Differences
 
-LESS and sass are different languages, some features of the original 
+LESS and sass are different languages, some features of the original
 can not be ported exactly. Some differences are:
 
 * no keyframe mixin
-* no media-query mixin - you can still set up the responsive values 
+* no media-query mixin - you can still set up the responsive values
   in vars.less for use with the responsive grid.
-* arrows mixin produces the same effect but the output code is 
+* arrows mixin produces the same effect but the output code is
   slightly different
 
 ## License
 
-LESS adaption copyright 2012 Peter Wilson  
+LESS adaption copyright 2012 Peter Wilson
 Original work copyright 2012 Harry Roberts
 
 Licensed under the Apache License, Version 2.0.
@@ -102,27 +102,28 @@ condensed into one powerful little framework.
 
 inuit.css is incredibly easy to get up and running (provided you’re all set for
 Sass). Simply [download the latest version](https://github.com/csswizardry/inuit.css/zipball/master)
-of inuit.css from right here on GitHub, unpack the zip file, rename
-`your-project.scss` to whatever your project is called and then watch that file.
+of inuit.css from right here on GitHub, unpack the zip file and watch the Sass.
 
 You can watch the file by `cd`ing into the directory that houses the `.scss`
 and running the following:
 
-    sass --watch [your-project].scss:[your-project].min.css --style compressed
-
-…where `[your-project]` is the name you have chosen for your build.
+    $ sass --watch style.scss:style.min.css --style compressed
 
 Alternatively you can modify [`watch.sh`](https://github.com/csswizardry/inuit.css/blob/master/watch.sh)
-to reflect the name of your project and simply run:
+to reflect the name of your project:
 
-	sh watch.sh
+    sass --watch style.scss:[set-your-desired-name-here].min.css --style compressed
+
+and simply run:
+
+    $ sh watch.sh
 
 …from the command line.
 
 That’s it, your project is now set up on inuit.css.
 
 To begin adding your styles on top of inuit.css just begin including things in
-[`[your-project].scss`](https://github.com/csswizardry/inuit.css/blob/master/your-project.scss#L22)
+[`style.scss`](https://github.com/csswizardry/inuit.css/blob/master/style.scss#L22)
 _after_ you’ve called in your variables and the inuit.css framework.
 
 If there are any  objects and abstractions you _don’t_ use in your project, it

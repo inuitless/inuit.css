@@ -12,7 +12,7 @@
 	// no access to outer scope
 	@p: @prefix;
 	@the-prefix: ~`(this.p.toJS() == "'null'")?'':this.p.toJS()`;
-	
+
 	/**
 	 * Whole
 	 */
@@ -158,10 +158,9 @@
 
 .responsive-widths() when (@responsive = true) {
 	@media only screen and (max-width:~"@{palm-end}px") { /* palm */
-	.grid-setup(palm-);
-	  
+		.grid-setup(palm-);
 	} // @media palm
-	
+
 	@media only screen and (min-width:~"@{lap-start}px") and (max-width:~"@{lap-end}px") { /* lap */
 		.grid-setup(lap-);
 	} // @media lap
@@ -178,3 +177,20 @@
 } //responsive=true mixin
 
 .responsive-widths();
+
+/**
+ * If you have set the additional `@responsive-extra` variable to ‘true’
+ * in `vars.scss` then you now have access to the following class available to
+ * accomodate much larger screen resolutions.
+ */
+
+.responsive-extra-widths() when (@responsive-extra = false) {
+}
+
+.responsive-extra-widths() when (@responsive-extra = true) {
+	@media only screen and (min-width:~"@{desk-wide-start}px") { /* deskwide */
+		.grid-setup(deskwide-);
+	} // @media deskwide
+} //responsive-extra=true mixin
+
+.responsive-extra-widths();
