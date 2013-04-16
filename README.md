@@ -2,9 +2,9 @@
 
 This is a LESS port of Harry Robert's [inuit.css](https://github.com/csswizardry/inuit.css/).
 
-The LESS version is up-to-date as of v4.5.5 To view changes to
+The LESS version is up-to-date as of v5.0.0. To view changes to
 the original that are waiting to be incorporated, visit the
-[compare page](https://github.com/csswizardry/inuit.css/compare/v4.5.5...master).
+[compare page](https://github.com/csswizardry/inuit.css/compare/v5.0.0...master).
 If you're getting impatient, feel free to submit a pull request.
 
 This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
@@ -17,14 +17,14 @@ can not be ported exactly. Some differences are:
 
 * no keyframe mixin
 * no media-query mixin - you can still set up the responsive values
-  in vars.less for use with the responsive grid.
+  from defaults.less for use with the responsive grid.
 * arrows mixin produces the same effect but the output code is
   slightly different
 
 ## License
 
-LESS adaption copyright 2012 Peter Wilson
-Original work copyright 2012 Harry Roberts
+LESS adaption copyright 2013 Peter Wilson
+Original work copyright 2013 Harry Roberts
 
 Licensed under the Apache License, Version 2.0.
 
