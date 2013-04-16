@@ -32,7 +32,7 @@ Licensed under the Apache License, Version 2.0.
 
 ![inuit.css](http://inuitcss.com/img/content/logo.png)
 
-# inuit.css – v5.0
+# inuit.css – v5.0-rc1
 
 inuit.css is a powerful little framework designed for _serious_ developers.
 
