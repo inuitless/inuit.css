@@ -50,6 +50,12 @@
 @responsive:        true;
 
 /**
+ * Responsiveness for widescreen/high resolution desktop monitors and beyond?
+ * Note: $responsive parameter above must be enabled before enabling this.
+ */
+@responsive-extra:  false;
+
+/**
  * Responsive push and pull produce a LOT of code, only turn them on if you
  * definitely need them.
  */
@@ -61,6 +67,7 @@
  */
 @lap-start:         481;
 @desk-start:        1024;
+@desk-wide-start:   1200;
 
 
 /**
@@ -79,6 +86,29 @@
 
 @milli-size:        12;
 @micro-size:        10;
+
+
+/**
+ * English quote marks?
+ */
+@english-quotes:    true;
+
+/**
+ * If you want English quotes then please do not edit this; it's only here
+ * because LESS needs it.
+ */
+.english-quotes() when (@english-quotes = true) {
+}
+
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+.english-quotes() when (@english-quotes = false) {
+    @open-quote:    '«';
+    @close-quote:   '»';
+}
+
+.english-quotes();
 
 
 /**

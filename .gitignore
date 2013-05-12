@@ -8,6 +8,10 @@
 *.css
 # ...but still track inuit.css
 !inuit.css/
+!compiled.inuit.css
+
+# Ignore compile script
+compile.sh
 
 # Ignore my little test/tinkering file
 inuit.css.html
