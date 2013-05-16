@@ -20,6 +20,17 @@ can not be ported exactly. Some differences are:
   from defaults.less for use with the responsive grid.
 * arrows mixin produces the same effect but the output code is
   slightly different
+* `defaults.less` is not imported by the `inuit.less` setup since it
+  would override your custom variables. You need to import it before
+  your own `vars.less` in your setup if you don't want to modify the
+  core framework:
+
+        /**
+         * Setup
+         */
+        @import "inuit.css/defaults"; // core framework defaults
+        @import "vars";               // your custom variables
+        @import "inuit.css/inuit";    // core framework
 
 ## License
 
