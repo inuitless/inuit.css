@@ -10,6 +10,60 @@ If you're getting impatient, feel free to submit a pull request.
 This fork is not endorsed by [@csswizardry](https://github.com/csswizardry/).
 I like inuit.css and my team and I use LESS.
 
+## Installation
+
+As there are few differences between the LESS port of inuit.css and its original
+version, we build [the LESS port of the inuit.css-web-template](https://github.com/nicoespeon/inuit.css-web-template) for you.
+
+### Install via command line (recommended)
+
+The command line install of the LESS port of inuit.css is _incredibly_ simple:
+
+    $ git clone --recursive git@github.com:nicoespeon/inuit.css-web-template.git your-project-folder
+    $ cd your-project-folder
+    $ ./go
+
+The principles behind that are exactly the same than for the original inuit.css repo.
+You'll find more detailed explanation from the original README, just below.
+
+### Install via zip
+
+Though not tested, using inuit.css from its GitHub zip _should_ be fairly
+simple. Using inuit.css from zipped source does mean that you can’t update
+inuit.css as a submodule, but you may well be able to drop fresh zip files into
+the `css/inuit.css/` directory provided you don’t edit any library code.
+
+Firstly you need to download [the LESS web template](https://github.com/nicoespeon/inuit.css-web-template)
+zip and unpack it to a location of your choosing. Next you need to download the
+inuit.css core zip and unpack that into `css/inuit.css/` in your new project.
+
+## Getting started
+
+Once you have your project set up, you should be looking at a directory
+structure a little like this:
+
+    your-project-folder/
+        css/
+            inuit.css/
+            vars.less
+            style.less
+        index.html
+
+Your CSS directory holds everything you need to get building:
+
+* Everything in `css/inuit.css/` is library code which **should not** be edited.
+  If you `cd` into here you should see that this submodule will initially be on
+  `(no branch)`, this is because the submodule points at a specific commit and
+  not a branch. You can treat this directory like any other Git project which
+  means you can `$ git checkout LESS` to get your submodule on the most
+  up-to-date stable version of inuit.css. To grab any new changes simply run
+  `$ git pull` on the `LESS` branch.
+* `vars.less` contains any project variables you need, as well as any overrides
+  you wish to make to the inuit.css library. It also houses feature switches to
+  turn inuit.css’ objects and abstractions on and off as you need them.
+* `style.less` is your master LESS stylesheet which will concatenate any other
+  stylesheets from inuit.css and your extensions when it is compiled.
+
 ## Differences
 
 LESS and sass are different languages, some features of the original
@@ -35,6 +89,7 @@ can not be ported exactly. Some differences are:
 ## License
 
 LESS adaption copyright 2013 Peter Wilson
+
 Original work copyright 2013 Harry Roberts
 
 Licensed under the Apache License, Version 2.0.
