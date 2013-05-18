@@ -148,8 +148,8 @@
  * If you need non-English quotes, please alter the following values accordingly:
  */
 .english-quotes() when (@english-quotes = false) {
-    @open-quote:    '«';
-    @close-quote:   '»';
+    @open-quote:    "\00AB";
+    @close-quote:   "\00BB";
 }
 
 .english-quotes();

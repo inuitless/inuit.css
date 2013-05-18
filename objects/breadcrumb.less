@@ -18,7 +18,7 @@
  *
  */
 .breadcrumb > li + li:before{
-    content:"» ";
+    content:"\00BB" "\00A0";
 }
 
 
@@ -34,7 +34,7 @@
  *
  */
 .breadcrumb--path > li + li:before{
-    content:"/ ";
+    content:"\002F" "\00A0";
 }
 
 
@@ -50,7 +50,7 @@
  *
  */
 .breadcrumb > li + li[data-breadcrumb]:before{
-    content:attr(data-breadcrumb)" ";
+    content:attr(data-breadcrumb) "\00A0";
 }
 
 

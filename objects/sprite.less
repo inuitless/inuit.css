@@ -5,20 +5,20 @@
     $SPRITE
 \*------------------------------------*/
 /**
- * Giving an element a class of `.s` will throw it into ‘sprite’ mode and apply
+ * Giving an element a class of `.sprite` will throw it into ‘sprite’ mode and apply
  * a background image e.g.:
  *
-   <a class="s  s--question-mark">More info&hellip;</a>
+   <a class="sprite  sprite--question-mark">More info&hellip;</a>
  *
  * or
  *
-   <a href=#><i class="s  s--question-mark"></i> Help and FAQ</a>
+   <a href=#><i class="sprite  sprite--question-mark"></i> Help and FAQ</a>
  *
- * Giving an element a class of `.i` will throw it into ‘icon’ mode and will
+ * Giving an element a class of `.icon` will throw it into ‘icon’ mode and will
  * not add a background, but should be used for icon fonts and is populated
  * through a `data-icon` attribute and the `:after` pseudo-element, e.g.:
  *
-   <a href=#><i class=i data-icon="&#xF000;"></i> View your favourites</a>
+   <a href=#><i class=icon data-icon="&#xF000;"></i> View your favourites</a>
  *
  * Where ‘&#xF000;’ might map to a star in your particular font.
  *
@@ -33,24 +33,24 @@
  * Demo: jsfiddle.net/inuitcss/6TKuS
  *
  */
-.s,
-.i{
+.sprite,
+.icon{
     display:inline-block;
     line-height:1;
     position:relative;
     vertical-align:middle;
     zoom:1;
     /**
-     * So using `.i` on certain elements doesn’t make a visual difference.
+     * So using `.icon` on certain elements doesn’t make a visual difference.
      */
     font-style:normal;
     font-weight:normal;
     /**
-     * So icons added using `.i` sit in the centre of the element.
+     * So icons added using `.icon` sit in the centre of the element.
      */
     text-align:center;
 }
-.s{
+.sprite{
     /**
      * The typical size of most icons. Override in your theme stylesheet.
      */
@@ -77,7 +77,7 @@
 /**
  * Set up icon font
  */
-.i{
+.icon{
     font-size:16px;
     /**
      * Place the icon in a box the exact same dimensions as the icon itself.
@@ -93,9 +93,9 @@
 /**
  * Icon size modifiers.
  */
-.i--large   { font-size:32px; }
-.i--huge    { font-size:64px; }
-.i--natural { font-size:inherit; }
+.icon--large   { font-size:32px; }
+.icon--huge    { font-size:64px; }
+.icon--natural { font-size:inherit; }
 
 
 } // use-sprite=true mixin
