@@ -204,8 +204,8 @@
  *
  * Assign our `$base-line-height` to a new spacing var for more transparency.
  */
-@base-spacing-unit: @base-line-height;
-@half-spacing-unit: (@base-spacing-unit / 2);
+@base-spacing-unit: unit(@base-line-height);
+@half-spacing-unit: unit((@base-spacing-unit / 2));
 @line-height-ratio: unit((@base-line-height/@base-font-size));
 
 @palm-end: (unit(@lap-start)-1);
