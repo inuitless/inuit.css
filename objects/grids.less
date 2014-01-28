@@ -43,7 +43,7 @@
     /**
      * Negative margin to negate the padding on the first grid child.
      */
-    margin-left:-1*(@base-spacing-unit)*1px;
+    margin-left:unit(-@base-spacing-unit, px);
     list-style:none;
     margin-bottom:0;
 }
@@ -63,7 +63,7 @@
     .grid__item{
         display:inline-block;
         width:100%;
-        padding-left:@base-spacing-unit*1px;
+        padding-left:unit(@base-spacing-unit, px);
         vertical-align:top;
         .do-selective-border-box(@global-border-box);
     }

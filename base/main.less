@@ -1,8 +1,10 @@
 /*------------------------------------*\
     $MAIN
 \*------------------------------------*/
+@main-font-size: unit((@base-font-size/16), em);
+
 html{
-    font: e(%("%d / %d", ((@base-font-size/16)*1em), @line-height-ratio)) @base-font-family;
+    font: e(%("%d / %d", @main-font-size, @line-height-ratio)) @base-font-family;
     overflow-y:scroll;
     min-height:100%;
 }

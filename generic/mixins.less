@@ -11,13 +11,13 @@
  * twitter.com/redclov3r/status/250301539321798657
  */
 .font-size(@font-size){
-    font-size:@font-size*1px;
-    font-size:(@font-size/@base-font-size)*1rem;
+    font-size:unit(@font-size, px);
+    font-size:unit((@font-size/@base-font-size), rem);
 }
 
 .font-size(@font-size, true){
-    font-size:@font-size*1px;
-    font-size:(@font-size/@base-font-size)*1rem;
+    font-size:unit(@font-size, px);
+    font-size:unit((@font-size/@base-font-size), rem);
     line-height:ceil(@font-size/@base-line-height)*(@base-line-height/@font-size);
 }
 
@@ -207,12 +207,12 @@
         content:"";
         position:absolute;
         border-collapse:separate;
-        border: @border*1px solid transparent;
+        border: unit(@border, px) solid transparent;
         .color(@arrow-edge,@border-color-local);
         .position(@arrow-edge,@arrow-location);
     }
     &:after{
-        border-width:@arrow*1px;
+        border-width:unit(@arrow, px);
         .color(@arrow-edge,@arrow-color);
         .position-after(@arrow-edge,@arrow-location);
     }
@@ -222,27 +222,27 @@
         left: 100%;
         .location(@arrow-location);
         .location(@arrow-location) when (@arrow-location = top) {
-            top: @arrow*1px;
+            top: unit(@arrow, px);
         }
         .location(@arrow-location) when (@arrow-location = center) {
             top: 50%;
             .neg-margin-top(@border);
         }
         .location(@arrow-location) when (@arrow-location = bottom) {
-            bottom: @arrow*1px;
+            bottom: unit(@arrow, px);
         }
     }
     .position-after(@arrow-edge,@arrow-location) when (@arrow-edge = right),(@arrow-edge = left) {
         .location(@arrow-location);
         .location(@arrow-location) when (@arrow-location = top) {
-            top: @border*1px;
+            top: unit(@border, px);
         }
         .location(@arrow-location) when (@arrow-location = center) {
             top: 50%;
             .neg-margin-top(@arrow);
         }
         .location(@arrow-location) when (@arrow-location = bottom) {
-            bottom: @border*1px;
+            bottom: unit(@border, px);
         }
     }
     .color(@arrow-edge,@color) when (@arrow-edge = right) {
@@ -253,14 +253,14 @@
         right: 100%;
         .location(@arrow-location);
         .location(@arrow-location) when (@arrow-location = top) {
-            top: @arrow*1px;
+            top: unit(@arrow, px);
         }
         .location(@arrow-location) when (@arrow-location = center) {
             top: 50%;
             .neg-margin-top(@border);
         }
         .location(@arrow-location) when (@arrow-location = bottom) {
-            bottom: @arrow*1px;
+            bottom: unit(@arrow, px);
         }
     }
     .color(@arrow-edge,@color) when (@arrow-edge = left) {
@@ -271,27 +271,27 @@
         bottom: 100%;
         .location(@arrow-location);
         .location(@arrow-location) when (@arrow-location = left) {
-            left: @arrow*1px;
+            left: unit(@arrow, px);
         }
         .location(@arrow-location) when (@arrow-location = center) {
             left: 50%;
             .neg-margin-left(@border);
         }
         .location(@arrow-location) when (@arrow-location = right) {
-            right: @arrow*1px;
+            right: unit(@arrow, px);
         }
     }
     .position-after(@arrow-edge,@arrow-location) when (@arrow-edge = top),(@arrow-edge = bottom) {
         .location(@arrow-location);
         .location(@arrow-location) when (@arrow-location = left) {
-            left: @border*1px;
+            left: unit(@border, px);
         }
         .location(@arrow-location) when (@arrow-location = center) {
             left: 50%;
             .neg-margin-left(@arrow);
         }
         .location(@arrow-location) when (@arrow-location = right) {
-            right: @border*1px;
+            right: unit(@border, px);
         }
     }
     .color(@arrow-edge,@color) when (@arrow-edge = top) {
@@ -302,14 +302,14 @@
         top: 100%;
         .location(@arrow-location);
         .location(@arrow-location) when (@arrow-location = left) {
-            left: @arrow*1px;
+            left: unit(@arrow, px);
         }
         .location(@arrow-location) when (@arrow-location = center) {
             left: 50%;
             .neg-margin-left(@border);
         }
         .location(@arrow-location) when (@arrow-location = right) {
-            right: @arrow*1px;
+            right: unit(@arrow, px);
         }
     }
     .color(@arrow-edge,@color) when (@arrow-edge = bottom) {
@@ -346,14 +346,14 @@
 
     > li{
         border-bottom-width:1px;
-        padding:@half-spacing-unit*1px;
+        padding:unit(@half-spacing-unit, px);
     }
 }
 
 .block-list-links() {
     display:block;
-    padding:@half-spacing-unit*1px;
-    margin:-1*@half-spacing-unit*1px;
+    padding:unit(@half-spacing-unit, px);
+    margin:-1*unit(@half-spacing-unit, px);
 }
 
 /**

@@ -39,21 +39,21 @@
 /**
  * Add/remove margins
  */
-.push           { margin:       @base-spacing-unit*1px!important; }
-.push--top      { margin-top:   @base-spacing-unit*1px!important; }
-.push--right    { margin-right: @base-spacing-unit*1px!important; }
-.push--bottom   { margin-bottom:@base-spacing-unit*1px!important; }
-.push--left     { margin-left:  @base-spacing-unit*1px!important; }
-.push--ends     { margin-top:   @base-spacing-unit*1px!important; margin-bottom:@base-spacing-unit*1px!important; }
-.push--sides    { margin-right: @base-spacing-unit*1px!important; margin-left:  @base-spacing-unit*1px!important; }
+.push           { margin:       unit(@base-spacing-unit, px)!important; }
+.push--top      { margin-top:   unit(@base-spacing-unit, px)!important; }
+.push--right    { margin-right: unit(@base-spacing-unit, px)!important; }
+.push--bottom   { margin-bottom:unit(@base-spacing-unit, px)!important; }
+.push--left     { margin-left:  unit(@base-spacing-unit, px)!important; }
+.push--ends     { margin-top:   unit(@base-spacing-unit, px)!important; margin-bottom:unit(@base-spacing-unit, px)!important; }
+.push--sides    { margin-right: unit(@base-spacing-unit, px)!important; margin-left:  unit(@base-spacing-unit, px)!important; }
 
-.push-half          { margin:       @half-spacing-unit*1px!important; }
-.push-half--top     { margin-top:   @half-spacing-unit*1px!important; }
-.push-half--right   { margin-right: @half-spacing-unit*1px!important; }
-.push-half--bottom  { margin-bottom:@half-spacing-unit*1px!important; }
-.push-half--left    { margin-left:  @half-spacing-unit*1px!important; }
-.push-half--ends    { margin-top:   @half-spacing-unit*1px!important; margin-bottom:@half-spacing-unit*1px!important; }
-.push-half--sides   { margin-right: @half-spacing-unit*1px!important; margin-left:  @half-spacing-unit*1px!important; }
+.push-half          { margin:       unit(@half-spacing-unit, px)!important; }
+.push-half--top     { margin-top:   unit(@half-spacing-unit, px)!important; }
+.push-half--right   { margin-right: unit(@half-spacing-unit, px)!important; }
+.push-half--bottom  { margin-bottom:unit(@half-spacing-unit, px)!important; }
+.push-half--left    { margin-left:  unit(@half-spacing-unit, px)!important; }
+.push-half--ends    { margin-top:   unit(@half-spacing-unit, px)!important; margin-bottom:unit(@half-spacing-unit, px)!important; }
+.push-half--sides   { margin-right: unit(@half-spacing-unit, px)!important; margin-left:  unit(@half-spacing-unit, px)!important; }
 
 .flush          { margin:       0!important; }
 .flush--top     { margin-top:   0!important; }
@@ -67,21 +67,21 @@
 /**
  * Add/remove paddings
  */
-.soft           { padding:       @base-spacing-unit*1px!important; }
-.soft--top      { padding-top:   @base-spacing-unit*1px!important; }
-.soft--right    { padding-right: @base-spacing-unit*1px!important; }
-.soft--bottom   { padding-bottom:@base-spacing-unit*1px!important; }
-.soft--left     { padding-left:  @base-spacing-unit*1px!important; }
-.soft--ends     { padding-top:   @base-spacing-unit*1px!important; padding-bottom:@base-spacing-unit*1px!important; }
-.soft--sides    { padding-right: @base-spacing-unit*1px!important; padding-left:  @base-spacing-unit*1px!important; }
+.soft           { padding:       unit(@base-spacing-unit, px)!important; }
+.soft--top      { padding-top:   unit(@base-spacing-unit, px)!important; }
+.soft--right    { padding-right: unit(@base-spacing-unit, px)!important; }
+.soft--bottom   { padding-bottom:unit(@base-spacing-unit, px)!important; }
+.soft--left     { padding-left:  unit(@base-spacing-unit, px)!important; }
+.soft--ends     { padding-top:   unit(@base-spacing-unit, px)!important; padding-bottom:unit(@base-spacing-unit, px)!important; }
+.soft--sides    { padding-right: unit(@base-spacing-unit, px)!important; padding-left:  unit(@base-spacing-unit, px)!important; }
 
-.soft-half           { padding:       @half-spacing-unit*1px!important; }
-.soft-half--top      { padding-top:   @half-spacing-unit*1px!important; }
-.soft-half--right    { padding-right: @half-spacing-unit*1px!important; }
-.soft-half--bottom   { padding-bottom:@half-spacing-unit*1px!important; }
-.soft-half--left     { padding-left:  @half-spacing-unit*1px!important; }
-.soft-half--ends     { padding-top:   @half-spacing-unit*1px!important; padding-bottom:@half-spacing-unit*1px!important; }
-.soft-half--sides    { padding-right: @half-spacing-unit*1px!important; padding-left:  @half-spacing-unit*1px!important; }
+.soft-half           { padding:       unit(@half-spacing-unit, px)!important; }
+.soft-half--top      { padding-top:   unit(@half-spacing-unit, px)!important; }
+.soft-half--right    { padding-right: unit(@half-spacing-unit, px)!important; }
+.soft-half--bottom   { padding-bottom:unit(@half-spacing-unit, px)!important; }
+.soft-half--left     { padding-left:  unit(@half-spacing-unit, px)!important; }
+.soft-half--ends     { padding-top:   unit(@half-spacing-unit, px)!important; padding-bottom:unit(@half-spacing-unit, px)!important; }
+.soft-half--sides    { padding-right: unit(@half-spacing-unit, px)!important; padding-left:  unit(@half-spacing-unit, px)!important; }
 
 .hard           { padding:       0!important; }
 .hard--top      { padding-top:   0!important; }
@@ -96,12 +96,12 @@
  * Pull items full width of `.island` parents.
  */
 .full-bleed{
-    margin-right:-@base-spacing-unit*1px!important;
-    margin-left: -@base-spacing-unit*1px!important;
+    margin-right:-unit(@base-spacing-unit, px)!important;
+    margin-left: -unit(@base-spacing-unit, px)!important;
 
     .islet &{
-        margin-right:-@half-spacing-unit*1px!important;
-        margin-left: -@half-spacing-unit*1px!important;
+        margin-right:-unit(@half-spacing-unit, px)!important;
+        margin-left: -unit(@half-spacing-unit, px)!important;
     }
 }
 

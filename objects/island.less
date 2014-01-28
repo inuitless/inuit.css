@@ -21,7 +21,7 @@
     /* @extend .cf; */
 }
 .island{
-    padding:@base-spacing-unit*1px;
+    padding:unit(@base-spacing-unit, px);
 }
     .island > :last-child,
     .islet > :last-child{
@@ -33,7 +33,7 @@
  * Just like `.island`, only smaller.
  */
 .islet{
-    padding:@half-spacing-unit*1px;
+    padding:unit(@half-spacing-unit, px);
 }
 
 } // use-island=true mixin

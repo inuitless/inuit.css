@@ -24,14 +24,14 @@
 }
     .media__img{
         float:left;
-        margin-right:@base-spacing-unit*1px;
+        margin-right:unit(@base-spacing-unit, px);
     }
     /**
      * Reversed image location (right instead of left).
      */
     .media__img--rev{
         float:right;
-        margin-left:@base-spacing-unit*1px;
+        margin-left:unit(@base-spacing-unit, px);
     }
 
         .media__img img,
@@ -52,10 +52,10 @@
      * `.img`s in `.islet`s need an appropriately sized margin.
      */
     .islet .media__img{
-        margin-right:@half-spacing-unit*1px;
+        margin-right:unit(@half-spacing-unit, px);
     }
     .islet .media__img--rev{
-        margin-left:@half-spacing-unit*1px;
+        margin-left:unit(@half-spacing-unit, px);
     }
 
 } // use-media=true mixin
